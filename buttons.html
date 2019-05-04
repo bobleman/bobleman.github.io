@@ -32,10 +32,8 @@
       e.preventDefault();
       var url = 'https://bobleman.github.io/ajax-2.html';
       $.getJSON( url, function( data ) {
-          var data_result = JSON.parse(data);
           console.log(data);
-          console.log(data_result);
-          $("#response").append(data_result);
+          $("#response").append(data);
       });
     })
   });
