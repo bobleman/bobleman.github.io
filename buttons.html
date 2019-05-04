@@ -35,7 +35,7 @@
       e.preventDefault();
       var url = 'https://bobleman.github.io/ajax-2.html';
       $.getJSON( url, function( data ) {
-          $("#response").append(data['glossary']['title']);
+          $("#response").append(data);
       });
     })
   });
