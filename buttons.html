@@ -27,6 +27,7 @@
         contentType: false,
         success: function(response) {
           $("#response").append(response);
+          $("#response").append('<br>');
         }
       })
     })
@@ -36,6 +37,7 @@
       var url = 'https://bobleman.github.io/ajax-2.html';
       $.getJSON( url, function( data ) {
           $("#response").append(data);
+          $("#response").append('<br>');
       });
     })
   });
