@@ -7,7 +7,8 @@
 </head>
 <body>
   <a href="#" id="button-1" class="btn badge-primary">Возврат кода страницы</a>
-  <a href="https://bobleman.github.io/ajax-2.html" id="button-2" class="btn badge-secondary">Возврат json</a>
+  <a href="#" id="button-2" class="btn badge-secondary">Возврат json</a>
+  <div id="response"></div>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>    
 </body>
@@ -25,7 +26,23 @@
         processData: false,
         contentType: false,
         success: function(response) {
-          $("html").html(response);
+          $("#response").append(response);
+        }
+      })
+    })
+
+    $('#button-2').on('click', function(e){
+      e.preventDefault();
+      var url = 'https://bobleman.github.io/ajax-2.html';
+      $.ajax({
+        url: url,
+        type: 'GET',
+        cache: false,
+        dataType: 'script',
+        processData: false,
+        contentType: false,
+        success: function(response) {
+          $("#response").append(response);
         }
       })
     })
